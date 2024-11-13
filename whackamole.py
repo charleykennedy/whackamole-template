@@ -9,13 +9,13 @@ def main():
         mole_image = pygame.image.load("mole.png")
         screen = pygame.display.set_mode((640, 512))
         clock = pygame.time.Clock()
-        mole = 0, 0
+        mole = (0, 0)
         running = True
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-                if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.type == pygame.MOUSEBUTTONDOWN: #moves mole to random square when clicked
                     clicked_x, clicked_y = event.pos
                     if clicked_x // 32 == mole[0] and clicked_y // 32 == mole[1]:
                         mole = (random.randrange(0, 20), random.randrange(0, 16))
